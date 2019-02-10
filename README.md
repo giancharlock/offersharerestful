@@ -58,7 +58,7 @@ http://localhost:8080/offershare/all
 
 ##############################################################################
 #Get all not expired offers
-http://localhost:8080/offershare/all/notexpired
+http://localhost:8080/offershare/notexpired
 
 
 
