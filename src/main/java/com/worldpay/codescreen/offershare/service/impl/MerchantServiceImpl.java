@@ -22,7 +22,7 @@ public class MerchantServiceImpl implements MerchantService {
     public void insertOffer(Offer offer) throws GenericOfferException {
         try {
             offerDAO.save(offer);
-        }catch (Throwable e){
+        }catch (Exception e){
             throw new GenericOfferException("Error saving offer: "+offer.toString(),e);
         }
     }
@@ -37,7 +37,7 @@ public class MerchantServiceImpl implements MerchantService {
             }else {
                 throw new GenericOfferException("Offer not found for id: "+id);
             }
-        }catch (Throwable e){
+        }catch (Exception e){
             throw new GenericOfferException("Error removing offer: "+e.getMessage(),e);
         }
     }

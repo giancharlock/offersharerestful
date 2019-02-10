@@ -27,25 +27,25 @@ public class OfferShareFacade {
     protected static final String EP_GETALL = "/all";
     protected static final String EP_GETALL_NOT_EXPIRED = "/notexpired";
 
-    @RequestMapping(value = MERCHANT_EP_ADD, method = RequestMethod.POST)
+    @PostMapping(value = MERCHANT_EP_ADD)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    public void insertOffer(@Valid @RequestBody Offer offer, HttpServletResponse response) throws GenericOfferException {
-        merchantService.insertOffer(offer);
+    public void insertOffer(@Valid @RequestBody OfferDTO offer, HttpServletResponse response) throws GenericOfferException {
+        merchantService.insertOffer(offer.getOfferEntity());
         response.setStatus(HttpStatus.CREATED.value());
     }
 
-    @RequestMapping(value = MERCHANT_EP_DEL+"/{id}", method = RequestMethod.POST)
+    @PostMapping(value = MERCHANT_EP_DEL+"/{id}")
     public void deleteOffer(@Valid @PathVariable Long id, HttpServletResponse response) throws GenericOfferException {
         merchantService.deleteOffer(id);
         response.setStatus(HttpStatus.OK.value());
     }
 
-    @RequestMapping(value = EP_GETALL, method = RequestMethod.GET)
+    @GetMapping(value = EP_GETALL)
     public List<Offer> getAll(HttpServletResponse response) throws GenericOfferException {
         return everybodyService.getAllOffers();
     }
 
-    @RequestMapping(value = EP_GETALL_NOT_EXPIRED, method = RequestMethod.GET)
+    @GetMapping(value = EP_GETALL_NOT_EXPIRED)
     public List<Offer> getAllNotExpired(HttpServletResponse response) throws GenericOfferException {
         return everybodyService.getAllNotExpiredOffers();
     }

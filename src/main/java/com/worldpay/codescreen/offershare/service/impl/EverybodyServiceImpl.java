@@ -22,7 +22,7 @@ public class EverybodyServiceImpl implements EverybodyService {
     public List<Offer> getAllOffers() throws GenericOfferException {
         try{
             return offerDAO.findAll();
-        }catch (Throwable e){
+        }catch (Exception e){
             throw new GenericOfferException("error getting all offers: "+e.getMessage(),e);
         }
     }
@@ -31,7 +31,7 @@ public class EverybodyServiceImpl implements EverybodyService {
     public List<Offer> getAllNotExpiredOffers() throws GenericOfferException {
         try{
             return offerDAO.findAllNotExpired(new Date());
-        }catch (Throwable e){
+        }catch (Exception e){
             throw new GenericOfferException("error getting all not expired offers: "+e.getMessage(),e);
         }
     }
