@@ -1,8 +1,15 @@
 package com.worldpay.codescreen.offershare.dao.impl;
 
+import com.worldpay.codescreen.offershare.config.OfferJpaConfig;
 import com.worldpay.codescreen.offershare.dao.OfferDAO;
 import com.worldpay.codescreen.offershare.pojo.Offer;
 import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -10,7 +17,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class OfferDAOImplBaseTest {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(
+        classes = { OfferJpaConfig.class },
+        loader = AnnotationConfigContextLoader.class)
+public abstract class OfferDAOImplBaseTest {
 
     List<Offer> offers = new ArrayList<>();
 

@@ -1,22 +1,13 @@
 package com.worldpay.codescreen.offershare.dao.impl;
 
-import com.worldpay.codescreen.offershare.config.OfferJpaConfig;
 import com.worldpay.codescreen.offershare.pojo.Offer;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-        classes = { OfferJpaConfig.class },
-        loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class OfferDAOImplTest extends OfferDAOImplBaseTest {
 

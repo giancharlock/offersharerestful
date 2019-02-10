@@ -3,10 +3,13 @@ package com.worldpay.codescreen.offershare.pojo;
 import com.worldpay.codescreen.offershare.dao.impl.OfferDAOImplBaseTest;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 public class OfferTest {
 
     private void fill(Offer offer, Long id, String title, String description, BigDecimal price, String cur, Date date) {

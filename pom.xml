@@ -34,13 +34,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- SCHEDULER -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
-		</dependency>
-
-
 		<!-- DATABASE -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>

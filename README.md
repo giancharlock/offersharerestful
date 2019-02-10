@@ -20,9 +20,6 @@ merchant:
 customer:
     view not expired offers
     vier all offers not expired and expired in last X weeks
-system (scheduler):
-    set an offer as expired automatically, check every second
-
 
 ## REQUIREMENTS
 Java version 1.8 or higher
