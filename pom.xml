@@ -10,13 +10,13 @@
 	</parent>
 	<groupId>com.worldpay.codescreen</groupId>
 	<artifactId>offershare</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>offershare</name>
 	<description>Code Screen project</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<mockito.version>2.14.0</mockito.version>
+		<mockito.version>2.24.0</mockito.version>
 		<dbunit.version>2.5.1</dbunit.version>
 	</properties>
 
@@ -56,6 +56,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>offershare</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

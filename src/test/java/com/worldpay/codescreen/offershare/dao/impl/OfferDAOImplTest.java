@@ -14,7 +14,7 @@ public class OfferDAOImplTest extends OfferDAOImplBaseTest {
     @Test
     public void insert() {
         Offer offer = offerDAO.save(
-                getOffer("myoffer", "myoffer description","EUR",
+                getOffer(1l,"myoffer", "myoffer description","EUR",
                         "123.45",new Date(new Date().getTime()+100000)));
         offerDAO.flush();
         Assert.assertTrue(offerDAO.findById(offer.getId()).isPresent());

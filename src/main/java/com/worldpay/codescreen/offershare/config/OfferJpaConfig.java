@@ -22,11 +22,8 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class OfferJpaConfig {
 
-    @Autowired
-    Environment env;
-
     @Bean
-    DataSource getDataSource() {
+    DataSource getDataSource(Environment env) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getProperty("offershare.jdbc.driver"));
         dataSource.setUrl(env.getProperty("offershare.jdbc.url"));

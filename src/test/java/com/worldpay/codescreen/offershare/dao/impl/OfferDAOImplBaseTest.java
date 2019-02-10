@@ -4,9 +4,7 @@ import com.worldpay.codescreen.offershare.config.OfferJpaConfig;
 import com.worldpay.codescreen.offershare.dao.OfferDAO;
 import com.worldpay.codescreen.offershare.pojo.Offer;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
@@ -38,14 +36,15 @@ public abstract class OfferDAOImplBaseTest {
     }
 
     private void initDb() {
-        offers.add(getOffer("first","first description",
+        offers.add(getOffer(1l,"first","first description",
                 "EUR","12.50", new Date(new Date().getTime()+100000)));
-        offers.add(getOffer("second","second description",
+        offers.add(getOffer(2l,"second","second description",
                 "USD","24.23", new Date(new Date().getTime()-100000)));
     }
 
-    static Offer getOffer(String title, String descr, String cur, String price, Date expireDate) {
+    public static Offer getOffer(Long id, String title, String descr, String cur, String price, Date expireDate) {
         Offer offer = new Offer();
+        offer.setId(id);
         offer.setCurrency(cur);
         offer.setTitle(title);
         offer.setDescription(descr);
@@ -54,10 +53,5 @@ public abstract class OfferDAOImplBaseTest {
         return offer;
     }
 
-    public static Offer getOffer(Long id,String title, String descr, String cur, String price, Date expireDate) {
-        Offer offer = getOffer(title,descr,cur,price,expireDate);
-        offer.setId(id);
-        return offer;
-    }
 
 }

@@ -1,5 +1,8 @@
 package com.worldpay.codescreen.offershare.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -11,7 +14,6 @@ import java.util.Objects;
 public class Offer implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", unique = true, nullable = false)
     private Long id;
 
@@ -25,9 +27,11 @@ public class Offer implements Serializable {
     private String currency;
 
     @Column(name="PRICE", nullable = false)
+    @JsonFormat(pattern = "")
     private BigDecimal price;
 
     @Column(name = "EXPIRE_DATE", nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date expireDate;
 
     @Transient
