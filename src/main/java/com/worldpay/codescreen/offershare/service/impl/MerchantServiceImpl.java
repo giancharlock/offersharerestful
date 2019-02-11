@@ -26,9 +26,10 @@ public class MerchantServiceImpl implements MerchantService {
     @Override
     public void insertOffer(Offer offer) throws GenericOfferException {
         try {
-            log.debug("Add offer:"+offer.toString());
+            if(log.isDebugEnabled()) {
+                log.debug("Add offer:" + offer.toString());
+            }
             offerDAO.save(offer);
-
         }catch (Exception e){
             throw new GenericOfferException("Error saving offer: "+offer.toString(),e);
         }
@@ -37,6 +38,9 @@ public class MerchantServiceImpl implements MerchantService {
     @Override
     public void deleteOffer(Long id) throws GenericOfferException {
         try {
+            if(log.isDebugEnabled()) {
+                log.debug("Del offer id:" + id);
+            }
             Optional<Offer> optOffer = offerDAO.findById(id);
             if(optOffer.isPresent()) {
                 Offer offer = optOffer.get();
