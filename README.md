@@ -2,7 +2,12 @@
 # OfferShareRESTful
 
 Merchant offer good for sale and share with customers, Offers are time-bounded.
-Can be cancelled before expiration. Can be seen also after expiration.
+Can be cancelled before expiration. Can be seen also after expiration. Read code-screen.pdf
+for complete description of the problem.
+
+###################################################
+#My others considerations at the end of this file #
+###################################################
 
 ##############################################################################
 ## IN
@@ -33,7 +38,7 @@ https://sonarcloud.io/dashboard?id=giancharlock_offersharerestful
 
 ##############################################################################
 #Run application
-java -jar
+java -jar offershare.jar
 
 ##############################################################################
 #Add offer
@@ -60,7 +65,14 @@ http://localhost:8080/offershare/all
 #Get all not expired offers
 http://localhost:8080/offershare/notexpired
 
+##############################################################################
+#Considerations/assumptions on implementation
 
+1) Merchant can add offer with the same id, in this case, it is a modification
+2) Merchant cam modify (via add) also expired offers so that can be recovered and reused
+3) Everybody can get all offers, also expired ones, but they are signed as expired=true
+4) Everybody can get all not expired offers
+5) User can delete offers before they expire but can delete them also if they are expired
 
 
 

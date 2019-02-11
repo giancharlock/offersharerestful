@@ -105,4 +105,18 @@ public class Offer implements Serializable {
     public int hashCode() {
         return Objects.hash(id, title, description, currency, price, expireDate);
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Offer{");
+        sb.append("id=").append(id);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", currency='").append(currency).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", expireDate=").append(expireDate);
+        sb.append(", expired=").append(expired);
+        sb.append('}');
+        return sb.toString();
+    }
 }

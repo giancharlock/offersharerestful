@@ -91,5 +91,18 @@ public class OfferDTO implements Serializable {
         offer.setTitle(this.getTitle());
         return offer;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("OfferDTO{");
+        sb.append("id=").append(id);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", description='").append(description).append('\'');
+        sb.append(", currency='").append(currency).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", expireDate=").append(expireDate);
+        sb.append('}');
+        return sb.toString();
+    }
 }
 
