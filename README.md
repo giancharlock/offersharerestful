@@ -32,10 +32,6 @@ customer:
 Java version 1.8 or higher
 
 ##############################################################################
-## Sonar site
-https://sonarcloud.io/dashboard?id=giancharlock_offersharerestful
-
-##############################################################################
 ## Run application
 java -jar offershare.jar
 
