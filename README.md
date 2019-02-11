@@ -1,25 +1,24 @@
-##############################################################################
 # OfferShareRESTful
 
 Merchant offer good for sale and share with customers, Offers are time-bounded.
 Can be cancelled before expiration. Can be seen also after expiration. Read code-screen.pdf
 for complete description of the problem.
 
-###################################################
-#My others considerations at the end of this file #
-###################################################
+######################################################
+## My others considerations at the end of this file ##
+######################################################
 
 ##############################################################################
 ## IN
 Offer in shopper friendly description
 Offer: title, description, price, currency, deadline
 
-##Actors
+## Actors
 merchant: insert/delete offer
 customer: view offers
 system (scheduler): set an offer as expired automatically
 
-#OUT
+## OUT
 RESTful service with following operations
 
 merchant:
@@ -33,15 +32,15 @@ customer:
 Java version 1.8 or higher
 
 ##############################################################################
-#Sonar site
+## Sonar site
 https://sonarcloud.io/dashboard?id=giancharlock_offersharerestful
 
 ##############################################################################
-#Run application
+## Run application
 java -jar offershare.jar
 
 ##############################################################################
-#Add offer
+## Add offer
 
 http://localhost:8080/offershare/add
 {
@@ -54,19 +53,19 @@ http://localhost:8080/offershare/add
 }
 
 ##############################################################################
-#Delete offer
+## Delete offer
 http://localhost:8080/offershare/del/{id}
 
 ##############################################################################
-#Get all offers
+## Get all offers
 http://localhost:8080/offershare/all
 
 ##############################################################################
-#Get all not expired offers
+## Get all not expired offers
 http://localhost:8080/offershare/notexpired
 
 ##############################################################################
-#Considerations/assumptions on implementation
+## Considerations/assumptions on implementation
 
 1) Merchant can add offer with the same id, in this case, it is a modification
 2) Merchant cam modify (via add) also expired offers so that can be recovered and reused
